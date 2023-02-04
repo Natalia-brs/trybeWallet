@@ -4,14 +4,25 @@ export const GET_DATA = 'GET_DATA';
 export const API_ERROR = 'API_ERROR';
 export const TOTAL = 'TOTAL';
 export const SET_EXPENSE = 'SET_EXPENSE';
+export const REMOVE_ID = 'REMOVE_ID';
+export const ATT_VALUE = 'ATT_VALUE';
 
 export const loginAction = (payload) => ({
   type: LOGIN,
   payload,
 });
 
+export const attValue = () => ({
+  type: ATT_VALUE,
+});
+
 export const apiRequest = () => ({
   type: REQUEST_API,
+});
+
+export const removeID = (id) => ({
+  type: REMOVE_ID,
+  id,
 });
 
 export const getData = (data) => ({
@@ -62,4 +73,9 @@ export const apiFetch = () => async (dispatch) => {
   } catch (error) {
     dispatch(apiError(error));
   }
+};
+
+export const updateTable = (id) => (dispatch) => {
+  dispatch(removeID(id));
+  dispatch(attValue());
 };

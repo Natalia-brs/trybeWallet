@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { updateTable } from '../redux/actions/index';
 
 class Table extends Component {
   renderTable = (dado) => {
@@ -43,8 +44,22 @@ class Table extends Component {
           { parseFloat(exchangeRates[currency].ask) * Number(value)}
         </td>
         <td> Real </td>
+        <td>
+          <button
+            type="button"
+            data-testid="delete-btn"
+            onClick={ () => this.handleClick(id) }
+          >
+            Excluir
+          </button>
+        </td>
       </tr>
     );
+  };
+
+  handleClick = (id) => {
+    const { dispatch } = this.props;
+    dispatch(updateTable(id));
   };
 
   render() {
@@ -74,6 +89,7 @@ class Table extends Component {
 
 Table.propTypes = {
   expenses: PropTypes.arrayOf(PropTypes.string).isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({ wallet }) => ({

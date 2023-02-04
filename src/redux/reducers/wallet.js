@@ -1,4 +1,10 @@
-import { API_ERROR, REQUEST_API, GET_DATA, TOTAL, SET_EXPENSE } from '../actions';
+import {
+  API_ERROR,
+  REQUEST_API,
+  GET_DATA, TOTAL,
+  SET_EXPENSE,
+  REMOVE_ID,
+  ATT_VALUE } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [],
@@ -22,6 +28,19 @@ const wallet = (state = INITIAL_STATE, action) => {
     return { ...state, totalExpenses: state.totalExpenses + action.amount };
   case SET_EXPENSE:
     return { ...state, expenses: [...state.expenses, action.expense] };
+  case REMOVE_ID:
+    return { ...state,
+      expenses: state.expenses
+        .filter((expense) => expense.id !== action.id) };
+  case ATT_VALUE:
+    return {
+      ...state,
+      totalExpenses: state.expenses.reduce((acc, cur) => {
+        const { value, exchangeRates, currency } = cur;
+        acc += (value * exchangeRates[currency].ask);
+        return acc;
+      }, 0),
+    };
   default:
     return state;
   }
