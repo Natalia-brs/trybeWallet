@@ -49,7 +49,7 @@ class Login extends React.Component {
           <span>E-mail: </span>
           <input
             data-testid="email-input"
-            type="text"
+            type="textbox"
             name="email"
             value={ email }
             id="email-input"
@@ -61,7 +61,7 @@ class Login extends React.Component {
           <span>Password: </span>
           <input
             data-testid="password-input"
-            type="password"
+            type="textbox"
             name="password"
             value={ password }
             id="pass-input"

@@ -63,7 +63,7 @@ class WalletForm extends Component {
           <span>Descrição: </span>
           <input
             data-testid="description-input"
-            type="text"
+            type="textbox"
             name="description"
             value={ description }
             id="descriptions-input"
@@ -109,13 +109,13 @@ class WalletForm extends Component {
           </select>
         </label>
 
-        <label htmlFor="method-input">
+        <label htmlFor="tag-input">
           <span>Categoria: </span>
           <select
             data-testid="tag-input"
             name="tag"
             value={ tag }
-            id="method-input"
+            id="tag-input"
             onChange={ this.handleChange }
           >
             <option value="Alimentação"> Alimentação </option>

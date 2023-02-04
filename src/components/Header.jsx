@@ -10,7 +10,6 @@ class Header extends Component {
     return (
       <div>
         <p data-testid="email-field">
-          E-mail:
           { userEmail }
         </p>
         <p data-testid="total-field">
