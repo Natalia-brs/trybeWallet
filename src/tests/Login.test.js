@@ -23,7 +23,7 @@ describe('Realizando testes de rota e inputs', () => {
     expect(inputPassword.value).toBe('123456');
   });
 
-  it('Texte de rota na home', () => {
+  it('Teste de rota na home', () => {
     const { history } = renderWithRouterAndRedux(<Login />);
     const { pathname } = history.location;
     expect(pathname).toBe('/');

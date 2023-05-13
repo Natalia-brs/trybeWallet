@@ -6,7 +6,7 @@ import Table from '../components/Table';
 class Wallet extends React.Component {
   render() {
     return (
-      <div>
+      <div className="bg-stone-950">
         <Header />
         <WalletForm />
         <Table />

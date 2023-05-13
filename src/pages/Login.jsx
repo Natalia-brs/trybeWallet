@@ -44,40 +44,56 @@ class Login extends React.Component {
   render() {
     const { email, password, buttonDisabled } = this.state;
     return (
-      <div>
-        <label htmlFor="email-input">
-          <span>E-mail: </span>
-          <input
-            data-testid="email-input"
-            type="textbox"
-            name="email"
-            value={ email }
-            id="email-input"
-            onChange={ this.handleChange }
-          />
-        </label>
+      <div
+        className=" flex h-screen w-screen flex-col bg-black md:items-center md:justify-center "
+      >
+        <form className=" mt-24 space-y-8 rounded bg-black/80 py-10 px-6 md:mt-0 md:max-w-md md:px-14">
+          <h1 className="text-slate-300 text-4xl font-semibold">Login </h1>
+          <div className="space-y-4">
+            <label
+              className="inline-block w-full"
+              htmlFor="email-input"
+            >
+              <input
+                className="input"
+                data-testid="email-input"
+                placeholder="Email"
+                type="textbox"
+                name="email"
+                value={ email }
+                id="email-input"
+                onChange={ this.handleChange }
+              />
+            </label>
 
-        <label htmlFor="pass-input">
-          <span>Password: </span>
-          <input
-            data-testid="password-input"
-            type="textbox"
-            name="password"
-            value={ password }
-            id="pass-input"
-            onChange={ this.handleChange }
-          />
-        </label>
+            <label
+              className="inline-block w-full"
+              htmlFor="pass-input"
+            >
+              <input
+                className="input text-slate-300"
+                data-testid="password-input"
+                placeholder="Senha"
+                type="password"
+                name="password"
+                value={ password }
+                id="pass-input"
+                onChange={ this.handleChange }
+              />
+            </label>
+          </div>
 
-        <button
-          type="button"
-          disabled={ buttonDisabled }
-          onClick={ this.handleClick }
-        >
-          {' '}
-          Entrar
+          <button
+            className="text-slate-300 w-full rounded bg-sky-700 py-3 font-semibold"
+            type="button"
+            disabled={ buttonDisabled }
+            onClick={ this.handleClick }
+          >
+            {' '}
+            Entrar
 
-        </button>
+          </button>
+        </form>
       </div>
     );
   }
