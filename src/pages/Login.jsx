@@ -98,17 +98,24 @@ class Login extends React.Component {
               />
             </label>
           </div>
-
-          <button
-            className="text-slate-300 w-full rounded bg-sky-700 py-3 font-semibold"
+          { buttonDisabled ? (
+            <button
+              className="text-slate-300 w-full rounded
+              bg-blue-500 py-3 font-semibold opacity-50 cursor-not-allowed"
+              type="button"
+              onClick={ this.handleClick }
+            >
+              {' '}
+              Entrar
+            </button>
+          ) : <button
+            className="text-slate-300 w-full rounded bg-sky-500  py-3 font-semibold"
             type="button"
-            disabled={ buttonDisabled }
             onClick={ this.handleClick }
           >
             {' '}
             Entrar
-
-          </button>
+            </button> }
         </form>
       </div>
     );
