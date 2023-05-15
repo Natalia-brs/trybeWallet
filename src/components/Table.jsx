@@ -53,7 +53,8 @@ class Table extends Component {
         <td>
 
           <button
-            className=" rounded-md bg-cyan-600 whitespace-nowrap px-14 py-4"
+            className=" rounded-md bg-cyan-600 whitespace-nowrap px-14
+            py-4 hover:text-white hover:bg-cyan-900"
             type="button"
             data-testid="delete-btn"
             onClick={ () => this.handleClick(id) }
@@ -74,7 +75,10 @@ class Table extends Component {
   render() {
     const { expenses } = this.props;
     return (
-      <div className="flex flex-col overflow-x-auto  scrollbar-thin scrollbar-track-transparent scrollbar-thumb-cyan-600">
+      <div
+        className="flex flex-col overflow-x-auto
+      scrollbar-thin scrollbar-track-transparent scrollbar-thumb-cyan-600"
+      >
         <div className="sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
             <div className="overflow-x-auto ">
@@ -89,7 +93,7 @@ class Table extends Component {
                     <th scope="col" className="px-6 py-4 text-slate-300">Câmbio utilizado</th>
                     <th scope="col" className="px-6 py-4 text-slate-300">Valor convertido</th>
                     <th scope="col" className="px-6 py-4 text-slate-300">Moeda de conversão</th>
-                    <th scope="col" className="px-6 py-4 text-slate-300">Editar/Excluir</th>
+                    <th scope="col" className="px-6 py-4 text-slate-300">Excluir</th>
                   </tr>
                 </thead>
                 <tbody>

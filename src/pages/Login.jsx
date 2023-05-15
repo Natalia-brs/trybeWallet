@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { loginAction } from '../redux/actions';
+import walletLogo from '../images/wallet-logo.png';
 
 class Login extends React.Component {
   constructor() {
@@ -45,10 +46,25 @@ class Login extends React.Component {
     const { email, password, buttonDisabled } = this.state;
     return (
       <div
-        className=" flex h-screen w-screen flex-col bg-black md:items-center md:justify-center "
+        className=" flex h-screen w-screen
+        flex-col bg-black md:items-center md:justify-center "
       >
-        <form className=" mt-24 space-y-8 rounded bg-black/80 py-10 px-6 md:mt-0 md:max-w-md md:px-14">
-          <h1 className="text-slate-300 text-4xl font-semibold">Login </h1>
+        <div
+          className="flex mt-24 items-center justify-center space-y-8
+        rounded bg-black/80 py-10 px-6 md:mt-0 md:max-w-md md:px-14"
+        >
+          <h1 className="text-slate-300 text-4xl font-semibold">Wallet App</h1>
+          <img
+            className=" w-24"
+            src={ walletLogo }
+            alt="wallet"
+          />
+        </div>
+        <form
+          className=" mt-24 space-y-8
+        rounded bg-black/80 py-10 px-6 md:mt-0 md:max-w-md md:px-14"
+        >
+          <h4 className="text-slate-300 text-4xl font-semibold">Login </h4>
           <div className="space-y-4">
             <label
               className="inline-block w-full"
