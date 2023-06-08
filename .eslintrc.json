@@ -13,7 +13,7 @@
             "ignoreRegExpLiterals": true,
             "ignoreStrings": true
           }
-        ],
+        ]
         // "max-lines": [ "off" ],
         // "no-magic-numbers": ["off"]
       }
