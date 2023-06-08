@@ -14,8 +14,8 @@
             "ignoreStrings": true
           }
         ],
-        "max-lines": [ "off" ],
-        "no-magic-numbers": ["off"]
+        // "max-lines": [ "off" ],
+        // "no-magic-numbers": ["off"]
       }
     }
   ]
